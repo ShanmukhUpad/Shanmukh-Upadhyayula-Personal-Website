@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import Link from "next/link";
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export function ResumeButton({ className = "" }: { className?: string }) {
   return (
