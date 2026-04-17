@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, GitBranch, Link2 } from "lucide-react";
+import { Mail } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { VineGrowth } from "@/components/svg/VineGrowth";
 
@@ -13,13 +14,13 @@ const LINKS = [
     display: "Email",
   },
   {
-    icon: GitBranch,
+    icon: FaGithub,
     label: "ShanmukhUpad",
     href: "https://github.com/ShanmukhUpad",
     display: "GitHub",
   },
   {
-    icon: Link2,
+    icon: FaLinkedin,
     label: "Shanmukh-Upadhyayula",
     href: "https://linkedin.com/in/Shanmukh-Upadhyayula",
     display: "LinkedIn",
