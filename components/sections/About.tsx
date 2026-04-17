@@ -23,7 +23,7 @@ const STATS = [
   { label: "GPA", value: "3.95 / 4.0" },
   { label: "Grad", value: "May 2027" },
   { label: "University", value: "UIUC" },
-  { label: "Major", value: "CS + GIS" },
+  { label: "Major", value: "CS + Geography & GIS" },
 ];
 
 export function About() {
