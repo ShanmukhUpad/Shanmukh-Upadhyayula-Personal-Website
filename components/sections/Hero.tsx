@@ -9,7 +9,6 @@ const CitySkyline = dynamic(
   { ssr: false, loading: () => null }
 );
 import { GridOverlay } from "@/components/svg/GridOverlay";
-import { ResumeButton } from "@/components/ui/ResumeButton";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const TypeAnimation = dynamic(
@@ -157,31 +156,6 @@ export function Hero() {
           and I am interested in applying them to build smarter tools for urban planning and GIS analysis.
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          variants={reduced ? {} : itemVariants}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3"
-        >
-          <ResumeButton />
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="px-6 py-3 rounded text-sm font-medium border transition-colors duration-200"
-            style={{
-              borderColor: "var(--color-border)",
-              color: "var(--color-text-muted)",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.color = "var(--color-text-primary)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)";
-            }}
-          >
-            Get in Touch
-          </motion.a>
-        </motion.div>
       </motion.div>
 
     </section>
