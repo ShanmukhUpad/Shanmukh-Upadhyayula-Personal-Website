@@ -72,7 +72,6 @@ export function Projects() {
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
-            04 / projects
           </p>
           <h2
             className="font-display font-bold text-3xl sm:text-4xl mb-4"

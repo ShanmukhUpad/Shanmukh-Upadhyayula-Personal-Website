@@ -153,6 +153,15 @@ body {
   }
 }
 
+/* Mapbox overrides */
+.mapboxgl-ctrl-attrib,
+.mapboxgl-ctrl-attrib.mapboxgl-compact {
+  background-color: transparent !important;
+}
+.mapboxgl-ctrl-logo {
+  opacity: 0.5;
+}
+
 /* MDX / prose overrides */
 .prose {
   --tw-prose-body: var(--color-text-primary);
