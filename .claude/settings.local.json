@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Read(//c/Users/shanm/Documents/Personal Projects/**)",
+      "Bash(npx create-next-app@latest personal-website --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(cp -r \"C:/Users/shanm/Documents/Personal Projects/personal-website/.\" \"C:/Users/shanm/Documents/Personal Projects/Personal_Website/\")",
+      "Bash(rm -rf \"C:/Users/shanm/Documents/Personal Projects/personal-website\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\(Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('git'\\) || k.toLowerCase\\(\\).includes\\('linkedin'\\) || k.toLowerCase\\(\\).includes\\('link'\\)\\)\\)\")",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(pkill -f \"next dev\")"
+    ]
+  }
+}
