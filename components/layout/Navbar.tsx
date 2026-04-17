@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+
+const MotionLink = motion(Link);
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -58,8 +60,8 @@ export function Navbar() {
           {NAV_LINKS.map((link) => (
             <NavLink key={link.href} href={link.href} label={link.label} />
           ))}
-          <motion.a
-            href="/resume.pdf"
+          <MotionLink
+            href="/ShanmukhUpadhyayula-Resume.pdf"
             download
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -78,7 +80,7 @@ export function Navbar() {
             }}
           >
             Resume
-          </motion.a>
+          </MotionLink>
         </div>
 
         {/* Mobile hamburger */}
@@ -124,8 +126,8 @@ export function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="/resume.pdf"
+              <Link
+                href="/ShanmukhUpadhyayula-Resume.pdf"
                 download
                 className="mt-1 px-4 py-2 rounded text-sm font-medium border text-center"
                 style={{
@@ -135,7 +137,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
               >
                 Resume
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
