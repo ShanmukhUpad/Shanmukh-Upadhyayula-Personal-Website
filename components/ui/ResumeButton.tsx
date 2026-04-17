@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 export function ResumeButton({ className = "" }: { className?: string }) {
   return (
-    <motion.a
+    <MotionLink
       href="/ShanmukhUpadhyayula-Resume.pdf"
       download="ShanmukhUpadhyayula-Resume.pdf"
       whileHover={{ scale: 1.03 }}
@@ -27,6 +30,6 @@ export function ResumeButton({ className = "" }: { className?: string }) {
     >
       <Download size={15} />
       Download Resume
-    </motion.a>
+    </MotionLink>
   );
 }
