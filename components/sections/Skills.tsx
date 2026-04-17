@@ -32,7 +32,7 @@ const SKILL_GROUPS = [
     skills: [
       "Sci-Kit Learn",
       "ESDA / libpysal",
-      "Choropleth Mapping",
+      "TensorFlow",
       "Matplotlib",
       "Seaborn",
     ],

@@ -34,6 +34,7 @@ const PROJECTS: Project[] = [
     tags: ["Next.js", "OpenCV", "Claude AI", "Google Calendar API", "TypeScript"],
     github: "https://github.com/sigchi-uiuc/digital-diary",
     demo: "https://acm-sigchi-digitaldiary.org/",
+    demoLabel: "Website",
     featured: true,
     period: "Sep 2025 – Present",
   },
@@ -49,13 +50,14 @@ const PROJECTS: Project[] = [
     period: "Feb 2026 – Mar 2026",
   },
   {
-    title: "Spatial Walkability Analysis — Chicago Metro",
+    title: "A Spatial Analysis of Walkability and Urban Form in the Chicago Metropolitan Area",
     description: [
       "Contributed a new EPA-derived walkability score variable to ChiVes, a geospatial urban analytics platform for the Chicago metro area",
       "Cleaned and transformed raw EPA walk score data using R'sf library into publication-ready spatial measures with improved geographic precision",
     ],
     tags: ["R", "sf", "Spatial Analysis", "ChiVes"],
     demo: "https://shanmukhupad.github.io/",
+    demoLabel: "Website",
     period: "Oct 2025 – Dec 2025",
   },
 ];
@@ -84,17 +86,26 @@ export function Projects() {
         </ScrollReveal>
 
         <motion.div
-          className="grid sm:grid-cols-2 gap-5 auto-rows-fr"
+          className="grid sm:grid-cols-2 gap-5 items-start"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
         >
-          {PROJECTS.map((project, i) => (
-            <motion.div key={i} variants={staggerItem} className="h-full">
-              <ProjectCard project={project} />
-            </motion.div>
-          ))}
+          <div className="flex flex-col gap-5">
+            {PROJECTS.filter((_, i) => i % 2 === 0).map((project, i) => (
+              <motion.div key={`l-${i}`} variants={staggerItem}>
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </div>
+          <div className="flex flex-col gap-5">
+            {PROJECTS.filter((_, i) => i % 2 === 1).map((project, i) => (
+              <motion.div key={`r-${i}`} variants={staggerItem}>
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GitBranch, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { TagBadge } from "./TagBadge";
 
 export interface Project {
@@ -10,6 +11,7 @@ export interface Project {
   tags: string[];
   github?: string;
   demo?: string;
+  demoLabel?: string;
   featured?: boolean;
   period?: string;
 }
@@ -87,7 +89,7 @@ export function ProjectCard({ project }: { project: Project }) {
               ((e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)")
             }
           >
-            <GitBranch size={13} />
+            <FaGithub size={13} />
             GitHub
           </motion.a>
         )}
@@ -107,7 +109,7 @@ export function ProjectCard({ project }: { project: Project }) {
             }
           >
             <ExternalLink size={13} />
-            Demo
+            {project.demoLabel ?? "Demo"}
           </motion.a>
         )}
       </div>
