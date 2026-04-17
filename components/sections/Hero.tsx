@@ -13,7 +13,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const TypeAnimation = dynamic(
   () => import("react-type-animation").then((m) => m.TypeAnimation),
-  { ssr: false, loading: () => <span style={{ color: "var(--color-neon)" }}>CS + GIS Student</span> }
+  { ssr: false, loading: () => <span style={{ color: "var(--color-neon)" }}>CS + GGIS Student</span> }
 );
 
 const containerVariants = {
@@ -128,15 +128,15 @@ export function Hero() {
         >
           <TypeAnimation
             sequence={[
-              "CS + GIS Student",
+              "CS Student",
+              2000,
+              "GIS Student",
+              2000,
+              "Urban Planning Enthusiast",
+              2000,
+              "Project Lead",
               2000,
               "AR/VR Developer",
-              2000,
-              "Urban Systems Thinker",
-              2000,
-              "HCI Researcher",
-              2000,
-              "GI Scientist",
               2000,
             ]}
             wrapper="span"
