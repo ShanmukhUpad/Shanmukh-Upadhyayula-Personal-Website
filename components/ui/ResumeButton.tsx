@@ -6,7 +6,7 @@ import { Download } from "lucide-react";
 export function ResumeButton({ className = "" }: { className?: string }) {
   return (
     <motion.a
-      href="/resume.pdf"
+      href="/ShanmukhUpadhyayula-Resume.pdf"
       download="ShanmukhUpadhyayula-Resume.pdf"
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.97 }}
