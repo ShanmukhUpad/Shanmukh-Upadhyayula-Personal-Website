@@ -11,6 +11,7 @@ const COURSEWORK = [
   "Virtual Reality",
   "Data Management in the Cloud",
   "Human-LLM Interaction",
+  "Deep Learning for Computer Vision",
   "Algorithms & Formal Models of Computation",
   "CyberGIS & Geospatial Data Science",
   "Intro to GIS I & II",
