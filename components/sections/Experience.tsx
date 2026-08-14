@@ -27,8 +27,8 @@ const EXPERIENCES: Experience[] = [
     period: "May 2026 – Aug 2026",
     tags: ["Python", "XGBoost", "GeoPandas"],
     links: [
-      { href: "/50_loss_reduction.ipynb", label: "Notebook", download: true },
-      { href: "/50_loss_reduction.html", label: "View", icon: "external" },
+      { href: "/bias_reduction.ipynb", label: "Notebook", download: true },
+      { href: "/bias_reduction.html", label: "View", icon: "external" },
     ],
     bullets: [
       "Cut a 0.128 recall gap across Chicago neighborhoods by 99% (0.125 to 0.001) by pitting a custom Group-DRO XGBoost objective, with hand-derived gradient/Hessian, against per-group thresholds.",
