@@ -41,7 +41,7 @@ const PROJECTS: Project[] = [
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL", "SODA API"],
     github: "https://github.com/ShanmukhUpad/Pathway-To-Improved-Cities",
     featured: true,
-    period: "Feb 2026 – Present",
+    period: "Feb 2026 – May 2026",
   },
   {
     title: "Digital Diary (ACM SIG-CHI)",
@@ -53,7 +53,7 @@ const PROJECTS: Project[] = [
     demo: "https://acm-sigchi-digitaldiary.org/",
     demoLabel: "Website",
     featured: true,
-    period: "Sep 2025 – Present",
+    period: "Sep 2025 – Apr 2026",
   },
   {
     title: "PlantRoute",
