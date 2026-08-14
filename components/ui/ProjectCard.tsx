@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import { TagBadge } from "./TagBadge";
+import { ResourceLinks, type ResourceLink } from "./ResourceLinks";
 
 export interface Project {
   title: string;
@@ -14,7 +16,10 @@ export interface Project {
   demoLabel?: string;
   featured?: boolean;
   period?: string;
+  links?: ResourceLink[];
 }
+
+const MotionLink = motion.create(Link);
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -73,7 +78,7 @@ export function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      <div className="flex items-center gap-3 mt-auto">
+      <div className="flex items-center gap-3 mt-auto flex-wrap">
         {project.github && (
           <motion.a
             href={project.github}
@@ -93,7 +98,23 @@ export function ProjectCard({ project }: { project: Project }) {
             GitHub
           </motion.a>
         )}
-        {project.demo && (
+        {project.demo && (project.demo.startsWith("/") ? (
+          <MotionLink
+            href={project.demo}
+            whileHover={{ y: -2 }}
+            className="flex items-center gap-1.5 text-xs transition-colors duration-150"
+            style={{ color: "var(--color-text-muted)" }}
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLElement).style.color = "var(--color-amber)")
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)")
+            }
+          >
+            <ExternalLink size={13} />
+            {project.demoLabel ?? "Demo"}
+          </MotionLink>
+        ) : (
           <motion.a
             href={project.demo}
             target="_blank"
@@ -111,7 +132,8 @@ export function ProjectCard({ project }: { project: Project }) {
             <ExternalLink size={13} />
             {project.demoLabel ?? "Demo"}
           </motion.a>
-        )}
+        ))}
+        <ResourceLinks links={project.links} />
       </div>
     </motion.div>
   );

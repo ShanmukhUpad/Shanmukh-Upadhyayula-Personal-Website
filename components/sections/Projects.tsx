@@ -12,8 +12,7 @@ const PROJECTS: Project[] = [
     ],
     tags: ["Python", "Concordia", "Vertex AI"],
     github: "https://github.com/VelupallyG/mas-sycophancy",
-    demo: "/MAS-Sycophancy.pdf",
-    demoLabel: "Paper",
+    links: [{ href: "/MAS-Sycophancy.pdf", label: "Paper", download: true }],
     featured: true,
     period: "Mar 2026 – May 2026",
   },
@@ -26,6 +25,13 @@ const PROJECTS: Project[] = [
     ],
     tags: ["Python", "GeoPandas", "libpysal", "esda", "spreg"],
     period: "Mar 2026 – May 2026",
+    links: [
+      {
+        href: "https://drive.google.com/file/d/1AqqyYQIkKm83-Xw9wflU3zjfdRdfiHaK/view?usp=sharing",
+        label: "View Analysis",
+        icon: "external",
+      },
+    ],
   },
   {
     title: "Pathway to Improved Cities (ACM SIG-AIDA)",
@@ -67,9 +73,9 @@ const PROJECTS: Project[] = [
       "Cleaned and transformed raw EPA walk score data using R'sf library into publication-ready spatial measures with improved geographic precision",
     ],
     tags: ["R", "sf", "Spatial Analysis", "ChiVes"],
-    demo: "https://shanmukhupad.github.io/",
+    demo: "https://shanmukhupad.github.io/chicago-walkability/",
     demoLabel: "Website",
-    period: "Oct 2025 – Dec 2025",
+    period: "Oct 2025 – Apr 2026",
   },
 ];
 

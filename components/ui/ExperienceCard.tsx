@@ -1,5 +1,6 @@
 import { TagBadge } from "./TagBadge";
 import { ExternalLink } from "lucide-react";
+import { ResourceLinks, type ResourceLink } from "./ResourceLinks";
 
 export interface Experience {
   role: string;
@@ -9,6 +10,7 @@ export interface Experience {
   bullets: string[];
   tags: string[];
   link?: string;
+  links?: ResourceLink[];
 }
 
 export function ExperienceCard({ exp }: { exp: Experience }) {
@@ -70,11 +72,17 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
         ))}
       </ul>
 
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-1.5 mb-3">
         {exp.tags.map((tag) => (
           <TagBadge key={tag} label={tag} variant="neon" />
         ))}
       </div>
+
+      {exp.links && exp.links.length > 0 && (
+        <div className="flex items-center gap-3 flex-wrap">
+          <ResourceLinks links={exp.links} />
+        </div>
+      )}
     </div>
   );
 }

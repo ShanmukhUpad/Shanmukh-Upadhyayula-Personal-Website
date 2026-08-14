@@ -26,6 +26,10 @@ const EXPERIENCES: Experience[] = [
     location: "Urbana, IL",
     period: "May 2026 – Aug 2026",
     tags: ["Python", "XGBoost", "GeoPandas"],
+    links: [
+      { href: "/50_loss_reduction.ipynb", label: "Notebook", download: true },
+      { href: "/50_loss_reduction.html", label: "View", icon: "external" },
+    ],
     bullets: [
       "Cut a 0.128 recall gap across Chicago neighborhoods by 99% (0.125 to 0.001) by pitting a custom Group-DRO XGBoost objective, with hand-derived gradient/Hessian, against per-group thresholds.",
       "Traced the disparity to a ranking deficit, not a threshold artifact, by computing per-group ROC AUC (0.667–0.724) over 8,312 inspections, correctly predicting which mitigation would work.",
@@ -38,7 +42,7 @@ const EXPERIENCES: Experience[] = [
     location: "Urbana, IL",
     period: "Mar 2026 – May 2026",
     tags: ["Python", "Concordia", "Vertex AI"],
-    link: "/MAS-Sycophancy.pdf",
+    links: [{ href: "/MAS-Sycophancy.pdf", label: "Paper", download: true }],
     bullets: [
       "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a 0.800 sycophancy effect size and 100% cascade by turn 3.",
       "Quantified the failure without an LLM judge by scoring structured JSON stances on turn-of-flip (2.0 vs. never), TRAIL planning errors (84 vs. 0), and deference markers (63.8% vs. 0%).",
