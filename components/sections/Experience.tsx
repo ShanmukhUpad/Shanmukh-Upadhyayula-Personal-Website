@@ -16,8 +16,8 @@ const EXPERIENCES: Experience[] = [
     link: "https://github.com/ShanmukhUpad/semantic-segmentation-feature",
     bullets: [
       "Cut segmentation error from 51% to under 10% at 20% pixel coverage on unseen aerial imagery by engineering four label-free uncertainty signals that rank a model's own errors without ground truth.",
-      "Proved failure detection survives domain shift at 0.61–0.74 pixel AUROC across 4 datasets spanning 44 countries and 6 continents, scoring AUROC, AUPR, risk-coverage, and Spearman correlation.",
-      "Diagnosed boundary and rare-class failure modes (0.31 vs. 0.58 mIoU at class edges) on a DeepLabV3-ResNet50 baseline at 0.5066 mIoU, publishing an IEEE paper and a CyberGIS talk.",
+      "Proved failure detection survives domain shift at 0.61–0.74 pixel AUROC across 4 datasets spanning 44 countries and 6 continents.",
+      "Diagnosed boundary and rare-class failure modes, roughly half the accuracy at class edges vs. interior regions, on a DeepLabV3-ResNet50 baseline, writing an IEEE-format paper and delivering a CyberGIS talk.",
     ],
   },
   {
@@ -31,9 +31,9 @@ const EXPERIENCES: Experience[] = [
       { href: "/bias_reduction.html", label: "View", icon: "external" },
     ],
     bullets: [
-      "Cut a 0.128 recall gap across Chicago neighborhoods by 99% (0.125 to 0.001) by pitting a custom Group-DRO XGBoost objective, with hand-derived gradient/Hessian, against per-group thresholds.",
-      "Traced the disparity to a ranking deficit, not a threshold artifact, by computing per-group ROC AUC (0.667–0.724) over 8,312 inspections, correctly predicting which mitigation would work.",
-      "Rebuilt the City's forecasting pipeline on 2018-present data (147,797 to 41,608 rows, 30 features) and clustered 801 census tracts into 3 typologies via two-stage k-means and Ward clustering.",
+      "Cut Chicago's largest cross-neighborhood recall gap by 99%, to nearly zero, by pitting a custom Group-DRO XGBoost objective, with hand-derived gradient/Hessian, against per-group thresholds.",
+      "Traced the disparity to a ranking deficit, not a threshold artifact, by computing per-group ROC AUC well above chance over 8,312 inspections, correctly predicting which mitigation would work.",
+      "Rebuilt the City's forecasting pipeline on 2018-present data, cutting 148K raw records down to 42K clean rows, and clustered neighborhoods into 3 typologies via two-stage k-means and Ward clustering.",
     ],
   },
   {

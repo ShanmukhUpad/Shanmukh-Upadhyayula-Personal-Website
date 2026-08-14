@@ -8,8 +8,8 @@ const PROJECTS: Project[] = [
   {
     title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
     description: [
-      "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a 0.800 sycophancy effect size and 100% cascade by turn 3.",
-      "Quantified the failure without an LLM judge by scoring structured JSON stances on turn-of-flip (2.0 vs. never), TRAIL planning errors (84 vs. 0), and deference markers (63.8% vs. 0%).",
+      "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a large sycophancy effect and 100% cascade by turn 3.",
+      "Quantified the failure without an LLM judge across three independent signals — stance flips, planning errors, and deference language — each completely absent in the uninjected baseline.",
       "Showed that explicit anti-sycophancy prompting fails to prevent collapse, co-authoring an ACL-format paper on the resulting \"Yes-Man\" failure mode.",
     ],
     tags: ["Python", "Concordia", "Vertex AI"],
@@ -21,8 +21,8 @@ const PROJECTS: Project[] = [
   {
     title: "Spatial Autocorrelation of AI Data Centers",
     description: [
-      "Proved 5 significant hyperscale-impact effects (p ≤ 0.020) vanish under a spatial-lag model, contrasting OLS-with-state-fixed-effects against GM_Lag across 3,220 U.S. counties.",
-      "Surfaced a 34-county Northern Virginia electricity-price hot spot invisible to national statistics via bivariate global Moran's I (999 permutations) and LISA across 5 impact variables.",
+      "Proved 5 statistically significant hyperscale-impact effects vanish under a spatial-lag model, contrasting OLS-with-state-fixed-effects against GM_Lag across 3,220 U.S. counties.",
+      "Surfaced a 34-county Northern Virginia electricity-price hot spot invisible to national statistics via bivariate global Moran's I and LISA across 5 impact variables.",
       "Fused 12 datasets on hyperscale locations, home values, utility prices, drought, and air quality into a Python spatial-regression pipeline.",
     ],
     tags: ["Python", "GeoPandas", "libpysal", "esda", "spreg"],
