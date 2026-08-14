@@ -6,15 +6,26 @@ import { ProjectCard, type Project } from "@/components/ui/ProjectCard";
 
 const PROJECTS: Project[] = [
   {
-    title: "LLM Study of Authority and Consensus in Multi-Agent Systems",
+    title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
     description: [
-      "Studying authority bias and hallucination propagation in agentic flows by designing hierarchical vs. flat multi-agent systems.",
-      "Introducing a whistleblower agent that challenges the orchestrator's consensus to test the limits of authority bias.",
-      "Measuring whether lower-weighted sub-agents can still drive opinion convergence across the hierarchy.",
+      "See MAS Sycophancy in experience section for details.",
     ],
-    tags: ["Python", "Concordia", "LaTeX / Overleaf"],
+    tags: ["Python", "Concordia", "Vertex AI"],
+    github: "https://github.com/VelupallyG/mas-sycophancy",
+    demo: "/MAS-Sycophancy.pdf",
+    demoLabel: "Paper",
     featured: true,
-    period: "Jan 2026 – Present",
+    period: "Mar 2026 – May 2026",
+  },
+  {
+    title: "Spatial Autocorrelation of AI Data Centers",
+    description: [
+      "Proved 5 significant hyperscale-impact effects (p ≤ 0.020) vanish under a spatial-lag model, contrasting OLS-with-state-fixed-effects against GM_Lag across 3,220 U.S. counties.",
+      "Surfaced a 34-county Northern Virginia electricity-price hot spot invisible to national statistics via bivariate global Moran's I (999 permutations) and LISA across 5 impact variables.",
+      "Fused 12 datasets on hyperscale locations, home values, utility prices, drought, and air quality into a Python spatial-regression pipeline.",
+    ],
+    tags: ["Python", "GeoPandas", "libpysal", "esda", "spreg"],
+    period: "Mar 2026 – May 2026",
   },
   {
     title: "Pathway to Improved Cities (ACM SIG-AIDA)",

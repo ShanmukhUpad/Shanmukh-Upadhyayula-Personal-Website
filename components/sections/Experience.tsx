@@ -8,6 +8,44 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const EXPERIENCES: Experience[] = [
   {
+    role: "Undergraduate Researcher",
+    company: "Semantic Segmentation Failure Analysis",
+    location: "Urbana, IL",
+    period: "May 2026 – Aug 2026",
+    tags: ["Python", "PyTorch", "torchvision"],
+    link: "https://github.com/ShanmukhUpad/semantic-segmentation-feature",
+    bullets: [
+      "Cut segmentation error from 51% to under 10% at 20% pixel coverage on unseen aerial imagery by engineering four label-free uncertainty signals that rank a model's own errors without ground truth.",
+      "Proved failure detection survives domain shift at 0.61–0.74 pixel AUROC across 4 datasets spanning 44 countries and 6 continents, scoring AUROC, AUPR, risk-coverage, and Spearman correlation.",
+      "Diagnosed boundary and rare-class failure modes (0.31 vs. 0.58 mIoU at class edges) on a DeepLabV3-ResNet50 baseline at 0.5066 mIoU, publishing an IEEE paper and a CyberGIS talk.",
+    ],
+  },
+  {
+    role: "Undergraduate Researcher",
+    company: "Bias Reduction in Food Inspection Models across Chicago",
+    location: "Urbana, IL",
+    period: "May 2026 – Aug 2026",
+    tags: ["Python", "XGBoost", "GeoPandas"],
+    bullets: [
+      "Cut a 0.128 recall gap across Chicago neighborhoods by 99% (0.125 to 0.001) by pitting a custom Group-DRO XGBoost objective, with hand-derived gradient/Hessian, against per-group thresholds.",
+      "Traced the disparity to a ranking deficit, not a threshold artifact, by computing per-group ROC AUC (0.667–0.724) over 8,312 inspections, correctly predicting which mitigation would work.",
+      "Rebuilt the City's forecasting pipeline on 2018-present data (147,797 to 41,608 rows, 30 features) and clustered 801 census tracts into 3 typologies via two-stage k-means and Ward clustering.",
+    ],
+  },
+  {
+    role: "Undergraduate Researcher",
+    company: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
+    location: "Urbana, IL",
+    period: "Mar 2026 – May 2026",
+    tags: ["Python", "Concordia", "Vertex AI"],
+    link: "/MAS-Sycophancy.pdf",
+    bullets: [
+      "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a 0.800 sycophancy effect size and 100% cascade by turn 3.",
+      "Quantified the failure without an LLM judge by scoring structured JSON stances on turn-of-flip (2.0 vs. never), TRAIL planning errors (84 vs. 0), and deference markers (63.8% vs. 0%).",
+      "Showed that explicit anti-sycophancy prompting fails to prevent collapse, co-authoring an ACL-format paper on the resulting \"Yes-Man\" failure mode.",
+    ],
+  },
+  {
     role: "Project Lead, Data Scientist & GI Scientist",
     company: "ACM SIG-AIDA",
     location: "Urbana, IL",
