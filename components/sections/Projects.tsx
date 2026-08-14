@@ -8,7 +8,9 @@ const PROJECTS: Project[] = [
   {
     title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
     description: [
-      "See MAS Sycophancy in experience section for details.",
+      "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a 0.800 sycophancy effect size and 100% cascade by turn 3.",
+      "Quantified the failure without an LLM judge by scoring structured JSON stances on turn-of-flip (2.0 vs. never), TRAIL planning errors (84 vs. 0), and deference markers (63.8% vs. 0%).",
+      "Showed that explicit anti-sycophancy prompting fails to prevent collapse, co-authoring an ACL-format paper on the resulting \"Yes-Man\" failure mode.",
     ],
     tags: ["Python", "Concordia", "Vertex AI"],
     github: "https://github.com/VelupallyG/mas-sycophancy",
@@ -36,7 +38,7 @@ const PROJECTS: Project[] = [
   {
     title: "Pathway to Improved Cities (ACM SIG-AIDA)",
     description: [
-      "See ACM SIG-AIDA in experience section for details.",
+      "See Pathway to Improved Cities in experience section for details.",
     ],
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL", "SODA API"],
     github: "https://github.com/ShanmukhUpad/Pathway-To-Improved-Cities",

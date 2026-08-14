@@ -37,21 +37,8 @@ const EXPERIENCES: Experience[] = [
     ],
   },
   {
-    role: "Undergraduate Researcher",
-    company: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
-    location: "Urbana, IL",
-    period: "Mar 2026 – May 2026",
-    tags: ["Python", "Concordia", "Vertex AI"],
-    links: [{ href: "/MAS-Sycophancy.pdf", label: "Paper", download: true }],
-    bullets: [
-      "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a 0.800 sycophancy effect size and 100% cascade by turn 3.",
-      "Quantified the failure without an LLM judge by scoring structured JSON stances on turn-of-flip (2.0 vs. never), TRAIL planning errors (84 vs. 0), and deference markers (63.8% vs. 0%).",
-      "Showed that explicit anti-sycophancy prompting fails to prevent collapse, co-authoring an ACL-format paper on the resulting \"Yes-Man\" failure mode.",
-    ],
-  },
-  {
     role: "Project Lead, Data Scientist & GI Scientist",
-    company: "ACM SIG-AIDA",
+    company: "Pathway to Improved Cities (ACM SIG-AIDA)",
     location: "Urbana, IL",
     period: "Feb 2026 – May 2026",
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL"],
