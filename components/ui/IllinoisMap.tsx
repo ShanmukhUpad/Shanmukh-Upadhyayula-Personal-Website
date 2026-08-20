@@ -33,7 +33,7 @@ export default function IllinoisMap() {
               <span
                 className="text-[9px] font-mono px-1 rounded mb-0.5"
                 style={{
-                  color: "var(--color-neon)",
+                  color: "var(--color-signal)",
                   backgroundColor: "rgba(0,0,0,0.6)",
                   whiteSpace: "nowrap",
                 }}
@@ -45,8 +45,8 @@ export default function IllinoisMap() {
                 style={{
                   width: 8,
                   height: 8,
-                  backgroundColor: "var(--color-neon)",
-                  boxShadow: "0 0 6px var(--color-neon)",
+                  backgroundColor: "var(--color-signal)",
+                  boxShadow: "0 0 6px var(--color-signal)",
                 }}
               />
             </div>

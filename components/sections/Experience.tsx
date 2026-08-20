@@ -94,11 +94,11 @@ export function Experience() {
       id="experience"
       ref={sectionRef}
       className="section-padding relative"
-      style={{ backgroundColor: "var(--color-void)" }}
+      style={{ backgroundColor: "var(--color-bg-alt)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
+          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
             02 / experience
           </p>
           <h2
@@ -122,8 +122,7 @@ export function Experience() {
               className="absolute top-0 left-0 w-full"
               style={{
                 height: reduced ? "100%" : lineHeight,
-                backgroundColor: "var(--color-neon-dim)",
-                boxShadow: "0 0 8px var(--color-neon-dim)",
+                backgroundColor: "var(--color-signal-dim)",
               }}
             />
           </div>
@@ -136,7 +135,19 @@ export function Experience() {
             viewport={{ once: true, margin: "-60px" }}
           >
             {EXPERIENCES.map((exp, i) => (
-              <motion.div key={i} variants={staggerItem}>
+              <motion.div key={i} variants={staggerItem} className="relative">
+                <span
+                  className="hidden lg:block absolute top-6"
+                  style={{
+                    left: "-1.5rem",
+                    transform: "translateX(-3.5px)",
+                    width: 7,
+                    height: 7,
+                    backgroundColor: "var(--color-signal)",
+                    border: "1px solid var(--color-bg-alt)",
+                  }}
+                  aria-hidden
+                />
                 <ExperienceCard exp={exp} />
               </motion.div>
             ))}

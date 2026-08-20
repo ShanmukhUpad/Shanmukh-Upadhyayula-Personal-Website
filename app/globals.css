@@ -1,55 +1,46 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @theme {
-  /* Backgrounds */
-  --color-void: #07070d;
-  --color-base: #0a0a0f;
-  --color-surface: #111118;
-  --color-elevated: #1a1a24;
-  --color-border: #252535;
+  /* Backgrounds — white, light lavender-gray, dark purple bands */
+  --color-base: #ffffff;
+  --color-bg-alt: #f5f2fb;
+  --color-surface: #faf8fd;
+  --color-elevated: #1c0a3d;
+  --color-void: #140730;
+  --color-border: #e1d9f3;
 
-  /* Accents — lavender */
-  --color-neon: #a78bfa;
-  --color-neon-dim: #8b5cf6;
-  --color-neon-glow: rgba(167, 139, 250, 0.35);
+  /* Signal — lavender accent */
+  --color-signal: #6b4fb0;
+  --color-signal-dim: #4f3a8a;
+  --color-signal-tint: rgba(107, 79, 176, 0.08);
 
-  /* City cool lights — sky blue */
-  --color-amber: #38bdf8;
-  --color-amber-dim: #0ea5e9;
-
-  /* Deep */
-  --color-moss: #2e1065;
-  --color-vine: #6d28d9;
-  --color-earth: #1e1b4b;
-
-  /* Sky night */
-  --color-night-blue: #3b82f6;
+  /* Route green — reserved, used only for the live-status indicator */
+  --color-route-green: #2e8b57;
 
   /* Text */
-  --color-text-primary: #f0f0f8;
-  --color-text-muted: #8888a8;
-  --color-text-faint: #44445a;
-
-  /* City grid overlay */
-  --color-grid: rgba(167, 139, 250, 0.04);
+  --color-text-primary: #201638;
+  --color-text-muted: #675f82;
+  --color-text-faint: #9c92b8;
 
   /* Fonts */
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
-  --font-display: var(--font-space-grotesk), var(--font-geist-sans), sans-serif;
+  --font-sans: var(--font-public-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), monospace;
+  --font-display: var(--font-archivo-narrow), var(--font-public-sans), sans-serif;
+}
 
-  /* Glows */
-  --shadow-neon-sm: 0 0 8px rgba(167, 139, 250, 0.3);
-  --shadow-neon-md: 0 0 20px rgba(167, 139, 250, 0.4);
-  --shadow-amber-sm: 0 0 8px rgba(56, 189, 248, 0.3);
+/* Dark-purple band scope — applied to Navbar, Footer, Hero, Projects, Contact */
+.theme-dark {
+  --color-surface: #2f1a63;
+  --color-border: #4a3480;
+  --color-signal: #b9a3f5;
+  --color-signal-dim: #9d82e0;
+  --color-signal-tint: rgba(185, 163, 245, 0.14);
+  --color-text-primary: #f5f2fc;
+  --color-text-muted: #cabfe8;
+  --color-text-faint: #8f80b0;
 }
 
 /* Base */
-:root {
-  color-scheme: dark;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -65,42 +56,23 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-void);
+  background: var(--color-base);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-border);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neon-dim);
+  background: var(--color-signal-dim);
 }
 
 /* Custom utilities */
 @layer utilities {
-  .bg-city-grid {
-    background-image:
-      linear-gradient(var(--color-grid) 1px, transparent 1px),
-      linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
-    background-size: 48px 48px;
-  }
-
-  .text-glow-neon {
-    text-shadow: 0 0 12px rgba(167, 139, 250, 0.5);
-  }
-
-  .border-glow-neon {
-    box-shadow:
-      0 0 0 1px rgba(167, 139, 250, 0.3),
-      0 0 16px rgba(167, 139, 250, 0.1);
-  }
-
   .card-hover-glow {
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: border-color 0.2s ease;
   }
   .card-hover-glow:hover {
-    box-shadow:
-      0 0 0 1px rgba(167, 139, 250, 0.4),
-      0 8px 32px rgba(167, 139, 250, 0.12);
+    border-color: var(--color-signal-dim);
   }
 
   .font-display {
@@ -120,39 +92,6 @@ body {
   }
 }
 
-/* Window flicker animation */
-@keyframes flicker {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  92% {
-    opacity: 1;
-  }
-  93% {
-    opacity: 0.4;
-  }
-  94% {
-    opacity: 1;
-  }
-  96% {
-    opacity: 0.6;
-  }
-  97% {
-    opacity: 1;
-  }
-}
-
-@keyframes vine-sway {
-  0%,
-  100% {
-    transform: rotate(-1deg);
-  }
-  50% {
-    transform: rotate(1deg);
-  }
-}
-
 /* Mapbox overrides */
 .mapboxgl-ctrl-attrib,
 .mapboxgl-ctrl-attrib.mapboxgl-compact {
@@ -160,23 +99,4 @@ body {
 }
 .mapboxgl-ctrl-logo {
   opacity: 0.5;
-}
-
-/* MDX / prose overrides */
-.prose {
-  --tw-prose-body: var(--color-text-primary);
-  --tw-prose-headings: var(--color-text-primary);
-  --tw-prose-links: var(--color-neon);
-  --tw-prose-bold: var(--color-text-primary);
-  --tw-prose-counters: var(--color-text-muted);
-  --tw-prose-bullets: var(--color-neon-dim);
-  --tw-prose-hr: var(--color-border);
-  --tw-prose-quotes: var(--color-text-muted);
-  --tw-prose-quote-borders: var(--color-neon-dim);
-  --tw-prose-captions: var(--color-text-muted);
-  --tw-prose-code: var(--color-neon);
-  --tw-prose-pre-code: var(--color-text-primary);
-  --tw-prose-pre-bg: var(--color-surface);
-  --tw-prose-th-borders: var(--color-border);
-  --tw-prose-td-borders: var(--color-border);
 }

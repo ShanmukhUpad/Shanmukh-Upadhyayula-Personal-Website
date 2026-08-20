@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { Code2, Earth, Layers, Library } from "lucide-react";
+import { Code, Globe, Layers, Library } from "@/components/ui/icons";
 
 const SKILL_GROUPS = [
   {
     category: "Languages",
-    icon: Code2,
+    icon: Code,
     skills: ["TypeScript", "Python", "HTML/CSS", "C++", "C", "R", "JavaScript", "C#", "Java", "SQL"],
-    accent: "neon" as const,
   },
   {
     category: "Frameworks & Tools",
@@ -18,13 +17,11 @@ const SKILL_GROUPS = [
       "React", "Next.js", "Node.js", "Prisma ORM", "Streamlit", "OpenCV", "MediaPipe", "Pandas",
       "Tailwind CSS", "Git", "Jupyter", "Unity", "Vercel", "LaTeX / Overleaf",
     ],
-    accent: "amber" as const,
   },
   {
     category: "GIS Software",
-    icon: Earth,
+    icon: Globe,
     skills: ["ArcGIS Pro", "ArcGIS Online", "ArcGIS Field Maps", "Mapbox GL", "Leaflet", "sf (R)", "GeoPandas"],
-    accent: "neon" as const,
   },
   {
     category: "Other Libraries",
@@ -36,7 +33,6 @@ const SKILL_GROUPS = [
       "Matplotlib",
       "Seaborn",
     ],
-    accent: "amber" as const,
   },
 ];
 
@@ -49,19 +45,6 @@ const tagVariants = {
   }),
 };
 
-const accentColors = {
-  neon: {
-    bg: "rgba(167,139,250,0.1)",
-    text: "var(--color-neon)",
-    border: "var(--color-neon-dim)",
-  },
-  amber: {
-    bg: "rgba(56,189,248,0.1)",
-    text: "var(--color-amber)",
-    border: "var(--color-amber-dim)",
-  },
-};
-
 export function Skills() {
   return (
     <section
@@ -71,7 +54,7 @@ export function Skills() {
     >
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
+          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
             05 / skills
           </p>
           <h2
@@ -85,19 +68,19 @@ export function Skills() {
         <div className="grid sm:grid-cols-2 gap-6">
           {SKILL_GROUPS.map((group, gi) => {
             const Icon = group.icon;
-            const colors = accentColors[group.accent];
             return (
               <ScrollReveal key={group.category} delay={gi * 0.08}>
                 <div
-                  className="rounded-lg border p-6"
+                  className="border p-6"
                   style={{
+                    borderRadius: 8,
                     backgroundColor: "var(--color-surface)",
                     borderColor: "var(--color-border)",
                   }}
                 >
                   <div className="flex items-center gap-2 mb-4">
-                    <Icon size={15} style={{ color: colors.text }} />
-                    <h3 className="text-sm font-mono" style={{ color: colors.text }}>
+                    <Icon size={15} style={{ color: "var(--color-signal)" }} />
+                    <h3 className="text-sm font-mono" style={{ color: "var(--color-signal)" }}>
                       {group.category}
                     </h3>
                   </div>
@@ -110,14 +93,14 @@ export function Skills() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
-                        className="inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-mono border"
+                        className="inline-flex items-center px-2.5 py-1 text-xs font-mono border"
                         style={{
-                          backgroundColor: colors.bg,
-                          color: colors.text,
-                          borderColor: colors.border,
+                          borderRadius: 6,
+                          backgroundColor: "var(--color-signal-tint)",
+                          color: "var(--color-signal)",
+                          borderColor: "var(--color-signal-dim)",
                           opacity: 0.85,
                         }}
-                        whileHover={{ opacity: 1, scale: 1.04 }}
                       >
                         {skill}
                       </motion.span>

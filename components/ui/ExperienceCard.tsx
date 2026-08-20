@@ -1,5 +1,5 @@
 import { TagBadge } from "./TagBadge";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink } from "@/components/ui/icons";
 import { ResourceLinks, type ResourceLink } from "./ResourceLinks";
 
 export interface Experience {
@@ -16,13 +16,11 @@ export interface Experience {
 export function ExperienceCard({ exp }: { exp: Experience }) {
   return (
     <div
-      className="relative rounded-lg border-l-[3px] p-6"
+      className="relative border p-6"
       style={{
+        borderRadius: 8,
         backgroundColor: "var(--color-surface)",
-        borderLeftColor: "var(--color-neon-dim)",
-        borderTop: "1px solid var(--color-border)",
-        borderRight: "1px solid var(--color-border)",
-        borderBottom: "1px solid var(--color-border)",
+        borderColor: "var(--color-border)",
       }}
     >
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
@@ -41,7 +39,7 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
       </div>
 
       <div className="flex items-center gap-2 mb-3">
-        <span className="text-sm font-medium" style={{ color: "var(--color-amber)" }}>
+        <span className="text-sm font-medium" style={{ color: "var(--color-signal)" }}>
           {exp.company}
         </span>
         <span className="text-xs" style={{ color: "var(--color-text-faint)" }}>
@@ -65,7 +63,7 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
           <li key={i} className="flex gap-2 text-sm leading-relaxed">
             <span
               className="mt-1.5 shrink-0 w-1 h-1 rounded-full"
-              style={{ backgroundColor: "var(--color-neon-dim)" }}
+              style={{ backgroundColor: "var(--color-signal-dim)" }}
             />
             <span style={{ color: "var(--color-text-muted)" }}>{b}</span>
           </li>
@@ -74,7 +72,7 @@ export function ExperienceCard({ exp }: { exp: Experience }) {
 
       <div className="flex flex-wrap gap-1.5 mb-3">
         {exp.tags.map((tag) => (
-          <TagBadge key={tag} label={tag} variant="neon" />
+          <TagBadge key={tag} label={tag} variant="signal" />
         ))}
       </div>
 

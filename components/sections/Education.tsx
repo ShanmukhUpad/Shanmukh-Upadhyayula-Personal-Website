@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { TagBadge } from "@/components/ui/TagBadge";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/components/ui/icons";
 
 const COURSEWORK = [
   "Spatial Analysis",
@@ -33,12 +33,13 @@ export function Education() {
 
   return (
     <section
+      id="education"
       className="section-padding"
       style={{ backgroundColor: "var(--color-base)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
+          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
             03 / education
           </p>
           <h2
@@ -51,8 +52,9 @@ export function Education() {
 
         <ScrollReveal delay={0.1}>
           <div
-            className="rounded-lg border p-6 sm:p-8"
+            className="border p-6 sm:p-8"
             style={{
+              borderRadius: 8,
               backgroundColor: "var(--color-surface)",
               borderColor: "var(--color-border)",
             }}
@@ -77,11 +79,12 @@ export function Education() {
                   Urbana, IL · May 2027
                 </span>
                 <span
-                  className="inline-flex mt-1.5 items-center px-2.5 py-1 rounded text-sm font-bold border"
+                  className="inline-flex mt-1.5 items-center px-2.5 py-1 text-sm font-bold border"
                   style={{
-                    borderColor: "var(--color-neon-dim)",
-                    color: "var(--color-neon)",
-                    backgroundColor: "rgba(167,139,250,0.08)",
+                    borderRadius: 6,
+                    borderColor: "var(--color-signal-dim)",
+                    color: "var(--color-signal)",
+                    backgroundColor: "var(--color-signal-tint)",
                   }}
                 >
                   GPA: 3.95 / 4.0
@@ -94,22 +97,23 @@ export function Education() {
               {INVOLVEMENT.map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-1.5 text-xs font-mono rounded-sm px-2.5 py-1 border"
+                  className="flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 border"
                   style={{
+                    borderRadius: 6,
                     borderColor: "var(--color-border)",
                     color: "var(--color-text-muted)",
                     backgroundColor: "var(--color-elevated)",
                   }}
                 >
-                  <span style={{ color: "var(--color-amber)" }}>{item.label}</span>
-                  <span style={{ color: "var(--color-text-faint)" }}>— {item.desc}</span>
+                  <span style={{ color: "var(--color-signal)" }}>{item.label}</span>
+                  <span style={{ color: "var(--color-text-faint)" }}>· {item.desc}</span>
                 </div>
               ))}
             </div>
 
             {/* Coursework collapsible */}
             <button
-              className="flex items-center gap-2 text-xs font-mono transition-colors duration-150"
+              className="flex items-center gap-2 text-xs font-mono transition-colors duration-150 hover:text-[var(--color-text-primary)]"
               style={{ color: "var(--color-text-muted)" }}
               onClick={() => setCourseOpen((o) => !o)}
             >

@@ -3,9 +3,21 @@
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ScrollReveal, staggerContainer, staggerItem } from "@/components/ui/ScrollReveal";
-import { VineGrowth } from "@/components/svg/VineGrowth";
 
-const IllinoisMap = dynamic(() => import("@/components/ui/IllinoisMap"), { ssr: false });
+function MapPlaceholder() {
+  return (
+    <div
+      className="bg-city-grid"
+      style={{ height: 280, width: "100%", backgroundColor: "var(--color-elevated)" }}
+      aria-hidden
+    />
+  );
+}
+
+const IllinoisMap = dynamic(() => import("@/components/ui/IllinoisMap"), {
+  ssr: false,
+  loading: () => <MapPlaceholder />,
+});
 
 const INTERESTS = [
   "AR / VR",
@@ -33,14 +45,9 @@ export function About() {
       className="relative section-padding overflow-hidden"
       style={{ backgroundColor: "var(--color-base)" }}
     >
-      {/* Vine accent */}
-      <div className="absolute bottom-0 right-8 opacity-30 hidden lg:block">
-        <VineGrowth side="right" />
-      </div>
-
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
+          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
             01 / about
           </p>
           <h2
@@ -89,11 +96,12 @@ export function About() {
                 <motion.span
                   key={interest}
                   variants={staggerItem}
-                  className="px-3 py-1 text-xs font-mono rounded-sm border"
+                  className="px-3 py-1 text-xs font-mono border"
                   style={{
-                    borderColor: "var(--color-moss)",
-                    color: "var(--color-neon-dim)",
-                    backgroundColor: "rgba(22,101,52,0.12)",
+                    borderRadius: 6,
+                    borderColor: "var(--color-signal-dim)",
+                    color: "var(--color-signal)",
+                    backgroundColor: "var(--color-signal-tint)",
                   }}
                 >
                   {interest}
@@ -110,8 +118,9 @@ export function About() {
                 {STATS.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-lg p-5 border"
+                    className="border p-5"
                     style={{
+                      borderRadius: 8,
                       backgroundColor: "var(--color-surface)",
                       borderColor: "var(--color-border)",
                     }}
@@ -121,7 +130,7 @@ export function About() {
                     </p>
                     <p
                       className="font-display font-bold text-xl"
-                      style={{ color: "var(--color-neon)" }}
+                      style={{ color: "var(--color-signal)" }}
                     >
                       {stat.value}
                     </p>
@@ -131,8 +140,8 @@ export function About() {
 
               {/* Illinois map */}
               <div
-                className="rounded-lg border overflow-hidden"
-                style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-surface)" }}
+                className="border overflow-hidden"
+                style={{ borderRadius: 8, borderColor: "var(--color-border)", backgroundColor: "var(--color-surface)" }}
               >
                 <IllinoisMap />
               </div>

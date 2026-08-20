@@ -9,7 +9,7 @@ const PROJECTS: Project[] = [
     title: "MAS Sycophancy: Hierarchical Multi-Agent LLM Failure",
     description: [
       "Demonstrated that hierarchical LLM agent topologies collapse under a single injected authority hallucination, driving a large sycophancy effect and 100% cascade by turn 3.",
-      "Quantified the failure without an LLM judge across three independent signals — stance flips, planning errors, and deference language — each completely absent in the uninjected baseline.",
+      "Quantified the failure without an LLM judge, using three independent signals (stance flips, planning errors, and deference language), each completely absent in the uninjected baseline.",
       "Showed that explicit anti-sycophancy prompting fails to prevent collapse, co-authoring an ACL-format paper on the resulting \"Yes-Man\" failure mode.",
     ],
     tags: ["Python", "Concordia", "Vertex AI"],
@@ -38,7 +38,8 @@ const PROJECTS: Project[] = [
   {
     title: "Pathway to Improved Cities (ACM SIG-AIDA)",
     description: [
-      "See Pathway to Improved Cities in experience section for details.",
+      "Led a team of 8 building ensemble ML models that predict urban hardship, crime hotspots, crash risk, and transit accessibility across 77 Chicago community areas.",
+      "Shipped an interactive Streamlit + Mapbox GL dashboard with choropleth maps, density heatmaps, and LISA cluster visualizations for city planning decisions.",
     ],
     tags: ["Python", "Sci-Kit Learn", "GeoPandas", "Streamlit", "Mapbox GL", "SODA API"],
     github: "https://github.com/ShanmukhUpad/Pathway-To-Improved-Cities",
@@ -48,7 +49,8 @@ const PROJECTS: Project[] = [
   {
     title: "Digital Diary (ACM SIG-CHI)",
     description: [
-      "See ACM SIG-CHI in experience section for details.",
+      "Architected a full-stack interactive journaling platform across a 15-person team.",
+      "Built a context-aware guided mode integrating Google Calendar, National Weather Service, and Claude AI, plus a real-time computer vision pipeline for mood inference.",
     ],
     tags: ["Next.js", "OpenCV", "Claude AI", "Google Calendar API", "TypeScript"],
     github: "https://github.com/sigchi-uiuc/digital-diary",
@@ -72,7 +74,7 @@ const PROJECTS: Project[] = [
     title: "A Spatial Analysis of Walkability and Urban Form in the Chicago Metropolitan Area",
     description: [
       "Contributed a new EPA-derived walkability score variable to ChiVes, a geospatial urban analytics platform for the Chicago metro area",
-      "Cleaned and transformed raw EPA walk score data using R'sf library into publication-ready spatial measures with improved geographic precision",
+      "Cleaned and transformed raw EPA walk score data using R's sf library into publication-ready spatial measures with improved geographic precision",
     ],
     tags: ["R", "sf", "Spatial Analysis", "ChiVes"],
     demo: "https://shanmukhupad.github.io/chicago-walkability/",
@@ -85,12 +87,13 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="section-padding"
-      style={{ backgroundColor: "var(--color-void)" }}
+      className="theme-dark section-padding"
+      style={{ backgroundColor: "var(--color-elevated)" }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
+          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
+            04 / projects
           </p>
           <h2
             className="font-display font-bold text-3xl sm:text-4xl mb-4"

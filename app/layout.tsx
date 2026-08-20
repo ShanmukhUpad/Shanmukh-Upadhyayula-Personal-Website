@@ -1,29 +1,31 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Archivo_Narrow, Public_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const archivoNarrow = Archivo_Narrow({
+  variable: "--font-archivo-narrow",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Shanmukh Upadhyayula — CS + GIS",
+  title: "Shanmukh Upadhyayula · CS + GIS",
   description:
-    "CS and GIS student at UIUC passionate in AR/VR, Urban Planning, Interactive Computing, Computer Vision, GIS, and HCI.",
+    "CS and GIS student at UIUC building software for urban planning, from computer vision on aerial imagery to spatial analysis of city data.",
   keywords: [
     "Shanmukh Upadhyayula",
     "CS",
@@ -36,17 +38,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shanmukh Upadhyayula" }],
   openGraph: {
-    title: "Shanmukh Upadhyayula — CS + GIS",
+    title: "Shanmukh Upadhyayula · CS + GIS",
     description:
-      "CS and GIS student at UIUC passionate in AR/VR, Urban Planning, Interactive Computing, Computer Vision, GIS, and HCI.",
+      "CS and GIS student at UIUC building software for urban planning, from computer vision on aerial imagery to spatial analysis of city data.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shanmukh Upadhyayula — CS + GIS",
+    title: "Shanmukh Upadhyayula · CS + GIS",
     description:
-      "CS and GIS student at UIUC passionate in AR/VR, Urban Planning, Interactive Computing, Computer Vision, GIS, and HCI.",
+      "CS and GIS student at UIUC building software for urban planning, from computer vision on aerial imagery to spatial analysis of city data.",
   },
 };
 
@@ -58,12 +60,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${archivoNarrow.variable} ${publicSans.variable} ${plexMono.variable} h-full antialiased`}
     >
-      <body
-        className="min-h-full flex flex-col"
-        style={{ backgroundColor: "var(--color-base)", color: "var(--color-text-primary)" }}
-      >
+      <body className="min-h-full flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

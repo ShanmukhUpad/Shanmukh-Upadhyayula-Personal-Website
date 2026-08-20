@@ -1,10 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { Mail, Github, Linkedin } from "@/components/ui/icons";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { VineGrowth } from "@/components/svg/VineGrowth";
 
 const LINKS = [
   {
@@ -14,13 +9,13 @@ const LINKS = [
     display: "Email",
   },
   {
-    icon: FaGithub,
+    icon: Github,
     label: "ShanmukhUpad",
     href: "https://github.com/ShanmukhUpad",
     display: "GitHub",
   },
   {
-    icon: FaLinkedin,
+    icon: Linkedin,
     label: "Shanmukh-Upadhyayula",
     href: "https://linkedin.com/in/Shanmukh-Upadhyayula",
     display: "LinkedIn",
@@ -31,20 +26,12 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="section-padding relative overflow-hidden"
-      style={{ backgroundColor: "var(--color-void)" }}
+      className="theme-dark section-padding relative overflow-hidden"
+      style={{ backgroundColor: "var(--color-elevated)" }}
     >
-      {/* Vine accents */}
-      <div className="absolute bottom-0 left-4 opacity-20 hidden lg:block">
-        <VineGrowth side="left" />
-      </div>
-      <div className="absolute bottom-0 right-4 opacity-20 hidden lg:block">
-        <VineGrowth side="right" />
-      </div>
-
       <div className="max-w-2xl mx-auto px-6 text-center">
         <ScrollReveal>
-          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-neon-dim)" }}>
+          <p className="text-xs font-mono mb-2" style={{ color: "var(--color-signal-dim)" }}>
             06 / contact
           </p>
           <h2
@@ -54,42 +41,29 @@ export function Contact() {
             Get in Touch
           </h2>
           <p className="text-base leading-relaxed mb-10" style={{ color: "var(--color-text-muted)" }}>
-            If anything you see on my website catches your attention, feel free to reach out!
+            If anything you see on my website catches your attention, reach out.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {LINKS.map(({ icon: Icon, label, href, display }) => (
-              <motion.a
+              <a
                 key={display}
                 href={href}
                 target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex items-center gap-2.5 px-5 py-3 rounded-lg border text-sm transition-colors duration-200"
+                className="flex items-center gap-2.5 px-5 py-3 border text-sm transition-colors duration-200 hover:border-[var(--color-signal-dim)] hover:text-[var(--color-signal)]"
                 style={{
+                  borderRadius: 8,
                   borderColor: "var(--color-border)",
                   color: "var(--color-text-muted)",
                   backgroundColor: "var(--color-surface)",
                 }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "var(--color-neon-dim)";
-                  el.style.color = "var(--color-neon)";
-                  el.style.boxShadow = "var(--shadow-neon-sm)";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = "var(--color-border)";
-                  el.style.color = "var(--color-text-muted)";
-                  el.style.boxShadow = "none";
-                }}
               >
                 <Icon size={14} />
                 <span className="font-mono text-xs">{label}</span>
-              </motion.a>
+              </a>
             ))}
           </div>
         </ScrollReveal>

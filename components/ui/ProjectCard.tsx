@@ -1,9 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { ExternalLink, Github } from "@/components/ui/icons";
 import { TagBadge } from "./TagBadge";
 import { ResourceLinks, type ResourceLink } from "./ResourceLinks";
 
@@ -19,25 +15,24 @@ export interface Project {
   links?: ResourceLink[];
 }
 
-const MotionLink = motion.create(Link);
-
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div
-      whileHover={{ y: -4 }}
-      className="group relative flex flex-col rounded-lg border p-6 transition-shadow duration-300 card-hover-glow"
+    <div
+      className="group relative flex flex-col border p-6 card-hover-glow"
       style={{
+        borderRadius: 8,
         backgroundColor: "var(--color-surface)",
         borderColor: "var(--color-border)",
       }}
     >
       {project.featured && (
         <span
-          className="absolute top-4 right-4 text-xs font-mono px-2 py-0.5 rounded-sm border"
+          className="absolute top-4 right-4 text-xs font-mono px-2 py-0.5 border"
           style={{
-            color: "var(--color-amber)",
-            borderColor: "var(--color-amber-dim)",
-            backgroundColor: "rgba(56,189,248,0.08)",
+            borderRadius: 6,
+            color: "var(--color-signal)",
+            borderColor: "var(--color-signal-dim)",
+            backgroundColor: "var(--color-signal-tint)",
           }}
         >
           Featured
@@ -61,7 +56,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <ul className="space-y-1 text-sm flex-1 mb-4">
           {project.description.map((b, i) => (
             <li key={i} className="flex gap-2 leading-relaxed">
-              <span className="mt-2 shrink-0 w-1 h-1 rounded-full" style={{ backgroundColor: "var(--color-neon-dim)" }} />
+              <span className="mt-2 shrink-0 w-1 h-1 rounded-full" style={{ backgroundColor: "var(--color-signal-dim)" }} />
               <span style={{ color: "var(--color-text-muted)" }}>{b}</span>
             </li>
           ))}
@@ -80,61 +75,40 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="flex items-center gap-3 mt-auto flex-wrap">
         {project.github && (
-          <motion.a
+          <a
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -2 }}
-            className="flex items-center gap-1.5 text-xs transition-colors duration-150"
+            className="flex items-center gap-1.5 text-xs transition-colors duration-150 hover:text-[var(--color-signal)]"
             style={{ color: "var(--color-text-muted)" }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--color-neon)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)")
-            }
           >
-            <FaGithub size={13} />
+            <Github size={13} />
             GitHub
-          </motion.a>
+          </a>
         )}
         {project.demo && (project.demo.startsWith("/") ? (
-          <MotionLink
+          <Link
             href={project.demo}
-            whileHover={{ y: -2 }}
-            className="flex items-center gap-1.5 text-xs transition-colors duration-150"
+            className="flex items-center gap-1.5 text-xs transition-colors duration-150 hover:text-[var(--color-signal)]"
             style={{ color: "var(--color-text-muted)" }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--color-amber)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)")
-            }
           >
             <ExternalLink size={13} />
             {project.demoLabel ?? "Demo"}
-          </MotionLink>
+          </Link>
         ) : (
-          <motion.a
+          <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -2 }}
-            className="flex items-center gap-1.5 text-xs transition-colors duration-150"
+            className="flex items-center gap-1.5 text-xs transition-colors duration-150 hover:text-[var(--color-signal)]"
             style={{ color: "var(--color-text-muted)" }}
-            onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--color-amber)")
-            }
-            onMouseLeave={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)")
-            }
           >
             <ExternalLink size={13} />
             {project.demoLabel ?? "Demo"}
-          </motion.a>
+          </a>
         ))}
         <ResourceLinks links={project.links} />
       </div>
-    </motion.div>
+    </div>
   );
 }

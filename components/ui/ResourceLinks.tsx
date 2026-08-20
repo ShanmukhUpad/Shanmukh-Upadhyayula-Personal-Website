@@ -1,9 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { Download, ExternalLink } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { Download, ExternalLink, Github } from "@/components/ui/icons";
 
 export interface ResourceLink {
   href: string;
@@ -13,12 +9,10 @@ export interface ResourceLink {
   icon?: "download" | "external" | "github";
 }
 
-const MotionLink = motion.create(Link);
-
 const ICONS = {
   download: Download,
   external: ExternalLink,
-  github: FaGithub,
+  github: Github,
 };
 
 function iconFor(link: ResourceLink) {
@@ -27,12 +21,9 @@ function iconFor(link: ResourceLink) {
   return ICONS.external;
 }
 
-const linkClass = "flex items-center gap-1.5 text-xs transition-colors duration-150";
+const linkClass =
+  "flex items-center gap-1.5 text-xs transition-colors duration-150 hover:text-[var(--color-signal)]";
 const linkStyle = { color: "var(--color-text-muted)" };
-const hoverOn = (e: React.MouseEvent<HTMLElement>) =>
-  ((e.currentTarget as HTMLElement).style.color = "var(--color-neon)");
-const hoverOff = (e: React.MouseEvent<HTMLElement>) =>
-  ((e.currentTarget as HTMLElement).style.color = "var(--color-text-muted)");
 
 /** Row of small labelled resource links (notebook downloads, papers, external views). */
 export function ResourceLinks({ links }: { links?: ResourceLink[] }) {
@@ -46,37 +37,31 @@ export function ResourceLinks({ links }: { links?: ResourceLink[] }) {
 
         if (isInternal) {
           return (
-            <MotionLink
+            <Link
               key={i}
               href={link.href}
               download={link.download ?? false}
-              whileHover={{ y: -2 }}
               className={linkClass}
               style={linkStyle}
-              onMouseEnter={hoverOn}
-              onMouseLeave={hoverOff}
             >
               <Icon size={13} />
               {link.label}
-            </MotionLink>
+            </Link>
           );
         }
 
         return (
-          <motion.a
+          <a
             key={i}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -2 }}
             className={linkClass}
             style={linkStyle}
-            onMouseEnter={hoverOn}
-            onMouseLeave={hoverOff}
           >
             <Icon size={13} />
             {link.label}
-          </motion.a>
+          </a>
         );
       })}
     </>
